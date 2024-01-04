@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Inside your global styles or CSS file */
+::-webkit-scrollbar {
+  height: 5px; /* Adjust the scrollbar's height */
+  width: 5px; /* Adjust the scrollbar's width */
+}
+
+/* For Webkit-based browsers like Chrome, Safari */
+::-webkit-scrollbar-track {
+  background: transparent; /* Track color */
+}
+
+::-webkit-scrollbar-thumb {
+}
+
+/* Apply the font family to desired elements */

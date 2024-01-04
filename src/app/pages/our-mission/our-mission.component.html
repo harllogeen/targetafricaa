@@ -1,0 +1,53 @@
+<section
+  class="bg-fcBlack grid lg:grid-cols-2 grid-cols-1 md:gap-[6%] lg:max-h-screen text-start p-10 lg:p-16 xl:p-20"
+>
+  <div class="block lg:hidden">
+    <div class="flex overflow-x-auto">
+      <div *ngFor="let mission of missions" class="mr-4">
+        <button
+          (click)="showContent(mission)"
+          class="text-white flex-shrink-0 scrollbar-hide uppercase py-8  inline-block !w-24 !break-words flex items-center justify-center  font-semibold font-inter text-[12px]  lg:text-[12px] w-full xl:text-[18px]  {{
+            activeItem === mission
+              ? 'font-semibold font-inter !text-[#D7AA17] underline underline-offset-[18px] '
+              : ''
+          }}"
+        >
+          {{ mission.title }}
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="activeItem">
+    <img
+      [src]="activeItem.image"
+      alt=""
+      class="sm:w-full w-full items-center lg:ml-0 flex order-first lg:order-last"
+    />
+  </div>
+  <div>
+    <div class="hidden lg:block">
+      <div class="flex justify-between w-full">
+        <div *ngFor="let mission of missions" class="mr-4">
+          <button
+            (click)="showContent(mission)"
+            class="text-white font-semibold text-[14px] lg:text-[12px] xl:text-[18px] font-inter   {{
+              activeItem === mission
+                ? 'font-semibold font-inter !text-[#D7AA17] underline underline-offset-[18px] '
+                : ''
+            }}"
+          >
+            {{ mission.title }}
+          </button>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="activeItem">
+      <p
+        class="mt-10 text-white leading-[35px] font-inter font-normal text-[14px] xl:text-[18px]"
+      >
+        {{ activeItem.content }}
+      </p>
+    </div>
+  </div>
+</section>

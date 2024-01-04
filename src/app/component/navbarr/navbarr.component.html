@@ -1,0 +1,144 @@
+<nav class="lg:py-4">
+  <div
+    class="flex bg-white md:bg-transparent py-4 sm:py-0 px-4 md:px-8 top-0 items-center justify-between"
+  >
+    <div class="flex items-center" routerLink="/">
+      <div>
+        <img src="../../../assets/images/logo.png" class="w-[45px] sm:w-full" />
+      </div>
+      <span
+        class="text-fcPrimary lg:text-white font-bold pl-2 text-[20px] xl:text-[26px]"
+        >Target Africa</span
+      >
+    </div>
+    <div class="hidden md:flex items-center space-x-6 font-inter">
+      <a routerLink="/home">
+        <div
+          class="relative inline-block"
+          (mouseenter)="showDropdown = true"
+          (mouseleave)="showDropdown = false"
+        >
+          <button
+            class="flex items-center text-[13px] xl:text-[14px] text-white py-2 rounded-md"
+          >
+            WHO ARE WE
+            <svg
+              *ngIf="!showDropdown"
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-4 h-4 ml-2"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M5.293 7.293a1 1 0 0 1 1.414 0L10 10.586l3.293-3.293a1 1 0 1 1 1.414 1.414l-4 4a1 1 0 0 1-1.414 0l-4-4a1 1 0 0 1 0-1.414z"
+              />
+            </svg>
+            <svg
+              *ngIf="showDropdown"
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-4 h-4 ml-2"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M14.707 12.293a1 1 0 0 1-1.414 1.414L10 10.414l-3.293 3.293a1 1 0 1 1-1.414-1.414l4-4a1 1 0 0 1 1.414 0l4 4z"
+              />
+            </svg>
+          </button>
+
+          <!-- Dropdown Content -->
+          <div
+            *ngIf="showDropdown"
+            class="absolute !z-50 bg-white py-2 cursor-pointer w-48 rounded-md shadow-lg"
+          >
+            <!-- Dropdown Items -->
+            <div class="px-6 py-2">Dropdown Item 1</div>
+            <div class="px-6 py-2">Dropdown Item 2</div>
+            <!-- Add more dropdown items as needed -->
+          </div>
+        </div>
+      </a>
+      <a
+        routerLink="/services"
+        fragment="servicesSection"
+        class="text-white text-[13px] xl:text-[14px] font-inter font-normal hover:text-white"
+        >OUR SERVICES</a
+      >
+      <a
+        routerLink="/about"
+        fragment="aboutSection"
+        class="text-white text-[13px] xl:text-[14px] font-inter font-normal hover:text-white"
+        >CLIENTS</a
+      >
+      <a
+        routerLink="/mission"
+        fragment="missionSection"
+        class="text-white text-[13px] xl:text-[14px] font-inter font-normal hover:text-white"
+        >PARTNERS</a
+      >
+      <a routerLink="/contact" fragment="contactSection">
+        <button
+          class="text-white text-[13px] xl:text-[14px] font-inter font-normal bg-fcPrimary px-6 py-4 rounded-full hover:text-white"
+        >
+          CONTACT US
+        </button>
+      </a>
+
+      <!-- Add more links as needed -->
+    </div>
+    <!-- Hamburger menu for mobile -->
+    <div class="md:hidden">
+      <button class="!text-black focus:outline-none" (click)="toggleMenu()">
+        <svg
+          class="h-8 w-8 fill-current"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+        >
+          <path
+            *ngIf="!isOpen"
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M4 6h16v2H4V6zm0 5h16v2H4v-2zm16 4H4v2h16v-2z"
+          />
+          <path
+            *ngIf="isOpen"
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M5 4h14v2H5V4zm0 5h14v2H5V9zm14 5H5v2h14v-2z"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <!-- Mobile menu -->
+  <div
+    class="md:hidden bg-fcBlack flex items-center justify-center mx-auto text-center pt-20 font-inter text-white"
+    [class.block]="isOpen"
+    [class.hidden]="!isOpen"
+  >
+    <div class="space-y-4">
+      <a href="#" class="block py-2 px-4">WHO ARE WE</a>
+      <a href="#" class="block py-2 px-4">OUR SERVICES</a>
+      <a href="#" class="block py-2 px-4">CLIENTS</a>
+      <a href="#" class="block py-2 px-4">PARTNERS</a>
+      <a href="#" class="block py-2 px-4">CONTACT US</a>
+
+      <div class="flex items-center justify-center py-20" routerLink="/">
+        <div>
+          <img
+            src="../../../assets/images/logo.png"
+            class="w-[w-45px] sm:w-full"
+          />
+        </div>
+        <span
+          class="text-fcPrimary lg:text-white font-bold pl-2 text-[20px] xl:text-[26px]"
+          >Target Africa</span
+        >
+      </div>
+    </div>
+
+    <!-- Add more links as needed -->
+  </div>
+</nav>

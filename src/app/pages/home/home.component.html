@@ -1,0 +1,63 @@
+<section class="z-10 relative h-screen">
+  <div
+    *ngFor="let slide of slides; let i = index"
+    [class.opacity-100]="currentIndex === i"
+    [class.opacity-0]="currentIndex !== i"
+    [class.transition-opacity]="isAnimating"
+    class="absolute inset-0 bg-cover  bg-center transition-opacity duration-500"
+    [style.backgroundImage]="'url(' + slide + ')'"
+  >
+    <div class="hidden md:block">
+      <app-navbarr></app-navbarr>
+    </div>
+
+    <div
+      class="text-white px-8 md:px-16 xl:px-20 flex h-[80%] justify-center items-center my-auto"
+    >
+      <div class="space-y-8">
+        <p
+          class="my-auto flex justify-center text-center font-cera-pro font-bold text-[30px] sm:text-[35px] lg:text-[50px] xl:text-[54px] xl:font-bold"
+        >
+          Unlocking Your Business Potential
+        </p>
+        <p class="text-center text-[12px] sm:text-base font-inter font-normal">
+          Lorem ipsum dolor sit amet consectetur. Lacus porttitor sed arcu
+          integer non duis. Eget et odio<br />
+          non cras curabitur in scelerisque. Lorem ipsum dolor sit amet
+          consectetur.
+        </p>
+        <div class="flex justify-center gap-6 pt-6">
+          <button
+            class="text-white text-[12px] sm:text-base font-inter font-normal bg-fcPrimary px-6 py-4 rounded-full hover:text-white"
+          >
+            OUR PRODUCT
+          </button>
+          <button
+            class="text-black text-[12px] sm:text-base font-inter font-normal bg-white px-6 py-4 rounded-full hover:text-black"
+          >
+            OUR SERVICES
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dots for navigation -->
+  <div
+    class="absolute bottom-12 left-1/2 transform -translate-x-1/2 flex space-x-2"
+  >
+    <span
+      *ngFor="let slide of slides; let i = index"
+      (click)="goToSlide(i)"
+      [class.bg-black]="currentIndex === i"
+      [class.bg-white]="currentIndex !== i"
+      class="w-2 h-2 rounded-full cursor-pointer"
+    ></span>
+  </div>
+</section>
+<app-about-us></app-about-us>
+<app-our-company></app-our-company>
+<app-our-mission></app-our-mission>
+<app-our-services></app-our-services>
+<app-contact></app-contact>
+<app-footer></app-footer>
