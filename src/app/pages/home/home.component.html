@@ -1,10 +1,10 @@
-<section class="z-10 relative h-screen">
+<section class="relative h-screen">
   <div
     *ngFor="let slide of slides; let i = index"
     [class.opacity-100]="currentIndex === i"
     [class.opacity-0]="currentIndex !== i"
     [class.transition-opacity]="isAnimating"
-    class="absolute inset-0 bg-cover  bg-center transition-opacity duration-500"
+    class="absolute inset-0 bg-cover bg-no-repeat bg-center transition-opacity duration-500"
     [style.backgroundImage]="'url(' + slide + ')'"
   >
     <div class="hidden md:block">
@@ -12,7 +12,7 @@
     </div>
 
     <div
-      class="text-white px-8 md:px-16 xl:px-20 flex h-[80%] justify-center items-center my-auto"
+      class="text-white px-8 md:px-16 xl:px-20 flex h-screen lg:h-[80%] justify-center items-center my-auto"
     >
       <div class="space-y-8">
         <p
