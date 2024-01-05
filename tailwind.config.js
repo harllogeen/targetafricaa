@@ -6,10 +6,10 @@ module.exports = {
       screens: {
         xxs: "100px",
         xs: "321px",
-        sm: "480px",
+        sm: "769px",
         md: "769px",
         lg: "900px",
-        xl:'1440px'
+        xl: "1440px",
       },
 
       colors: {
@@ -17,7 +17,7 @@ module.exports = {
         fcSecondary: "#D7AA17",
         fcBlack: "#232323",
         fcBlack2: "#1E1E1E",
-        fcGray:'#C4C4C4'
+        fcGray: "#C4C4C4",
       },
       fontWeight: {
         hairline: 100,

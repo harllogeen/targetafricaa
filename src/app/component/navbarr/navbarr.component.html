@@ -1,6 +1,6 @@
-<nav class="lg:py-4 ">
+<nav class="lg:py-4">
   <div
-    class="flex bg-white md:bg-transparent py-4 sm:py-0 px-4 md:px-8 top-0 items-center justify-between"
+    class="flex bg-white md:bg-transparent py-4 sm:py-0 px-4 md:px-16 top-0 items-center justify-between"
   >
     <div class="flex items-center" routerLink="/">
       <div>
@@ -11,7 +11,7 @@
         >Target Africa</span
       >
     </div>
-    <div class="hidden md:flex items-center space-x-6 font-inter">
+    <div class="hidden sm:flex items-center space-x-6 font-semibold font-inter">
       <a routerLink="/home">
         <div
           class="relative inline-block"
@@ -51,11 +51,19 @@
           <!-- Dropdown Content -->
           <div
             *ngIf="showDropdown"
-            class="absolute !z-50 bg-white py-2 cursor-pointer w-48 rounded-md shadow-lg"
+            class="absolute !z-50 bg-white py-2 cursor-pointer w-60 rounded-md shadow-lg"
           >
             <!-- Dropdown Items -->
-            <div class="px-6 py-2">Dropdown Item 1</div>
-            <div class="px-6 py-2">Dropdown Item 2</div>
+            <div class="px-6 py-2">test 1</div>
+            <div class="px-6 py-2">test 2</div>
+            <div class="px-6 py-2">test 3</div>
+
+            <div class="px-6 py-2">test 4</div>
+
+            <div class="px-6 py-2">test 5</div>
+
+            <div class="px-6 py-2">test 6</div>
+
             <!-- Add more dropdown items as needed -->
           </div>
         </div>
@@ -63,34 +71,35 @@
       <a
         routerLink="/services"
         fragment="servicesSection"
-        class="text-white text-[13px] xl:text-[14px] font-inter font-normal hover:text-white"
+        class="text-white text-[13px] xl:text-[14px] font-inter font-semibold hover:text-white"
         >OUR SERVICES</a
       >
       <a
         routerLink="/about"
         fragment="aboutSection"
-        class="text-white text-[13px] xl:text-[14px] font-inter font-normal hover:text-white"
+        class="text-white text-[13px] xl:text-[14px] font-inter font-semibold hover:text-white"
         >CLIENTS</a
       >
       <a
         routerLink="/mission"
         fragment="missionSection"
-        class="text-white text-[13px] xl:text-[14px] font-inter font-normal hover:text-white"
+        class="text-white text-[13px] xl:text-[14px] font-inter font-semibold hover:text-white"
         >PARTNERS</a
       >
       <a routerLink="/contact" fragment="contactSection">
         <button
-          class="text-white text-[13px] xl:text-[14px] font-inter font-normal bg-fcPrimary px-6 py-4 rounded-full hover:text-white"
+          class="text-white text-[13px] xl:text-[14px] font-inter font-semibold bg-fcPrimary px-6 py-4 rounded-full hover:text-white"
         >
           CONTACT US
         </button>
       </a>
-
-      <!-- Add more links as needed -->
     </div>
     <!-- Hamburger menu for mobile -->
     <div class="md:hidden">
-      <button class="!text-black focus:outline-none" (click)="toggleMenu()">
+      <button
+        class="!text-black focus:outline-none right-4 z-50"
+        (click)="toggleMenu()"
+      >
         <svg
           class="h-8 w-8 fill-current"
           xmlns="http://www.w3.org/2000/svg"
@@ -114,7 +123,100 @@
   </div>
   <!-- Mobile menu -->
   <div
-    class="md:hidden bg-fcBlack flex items-center justify-center mx-auto text-center pt-20 font-inter text-white"
+    class="fixed inset-0 z-50 flex items-center justify-center bg-opacity-50"
+    [class.block]="isOpen"
+    [class.hidden]="!isOpen"
+  >
+    <div
+      class="w-full md:hidden bg-fcBlack flex items-center justify-center mx-auto text-center pt-20 font-inter text-white h-full transform transition-transform ease-in-out duration-300"
+      [ngClass]="{ '-translate-x-full': !isOpen }"
+    >
+      <div class="md:hidden">
+        <button
+          class="!text-white absolute top-4 focus:outline-none right-4 z-50"
+          (click)="toggleMenu()"
+        >
+          <svg
+            *ngIf="isOpen"
+            class="w-8 h-8"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill="currentColor"
+              d="M6.707 7.293a1 1 0 011.414 0L12 11.586l3.879-3.88a1 1 0 111.414 1.414L13.414 13l3.88 3.879a1 1 0 11-1.414 1.414L12 14.414l-3.879 3.88a1 1 0 01-1.414-1.414L10.586 13 6.707 9.121a1 1 0 010-1.414z"
+            ></path>
+          </svg>
+        </button>
+      </div>
+      <!-- Navbar content -->
+      <div class="space-y-4">
+        <div href="#" class="block py-2 px-4">
+          <div class="relative inline-block" (click)="toggleDropdown()">
+            <button
+              class="flex items-center justify-center place-items-center text-center text-white py-2 rounded-md"
+            >
+              WHO ARE WE
+              <svg
+                *ngIf="!isDropdownOpen"
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-8 h-8 ml-4"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M5.293 7.293a1 1 0 0 1 1.414 0L10 10.586l3.293-3.293a1 1 0 1 1 1.414 1.414l-4 4a1 1 0 0 1-1.414 0l-4-4a1 1 0 0 1 0-1.414z"
+                />
+              </svg>
+              <svg
+                *ngIf="isDropdownOpen"
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-8 h-8 ml-4"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M14.707 12.293a1 1 0 0 1-1.414 1.414L10 10.414l-3.293 3.293a1 1 0 1 1-1.414-1.414l4-4a1 1 0 0 1 1.414 0l4 4z"
+                />
+              </svg>
+            </button>
+
+            <!-- Dropdown Content -->
+            <div *ngIf="isDropdownOpen" class="py-2 cursor-pointer">
+              <!-- Dropdown Items -->
+              <div class="px-6 py-2">test 1</div>
+              <div class="px-6 py-2">test 2</div>
+              <div class="px-6 py-2">test 3</div>
+
+              <!-- Add more dropdown items as needed -->
+            </div>
+          </div>
+        </div>
+        <a href="#" class="block py-2 px-4">OUR SERVICES</a>
+        <a href="#" class="block py-2 px-4">CLIENTS</a>
+        <a href="#" class="block py-2 px-4">PARTNERS</a>
+        <a href="#" class="block py-2 px-4">CONTACT US</a>
+
+        <div class="flex items-center justify-center py-20" routerLink="/">
+          <div>
+            <img
+              src="../../../assets/images/logo.png"
+              class="w-[w-45px] sm:w-full"
+            />
+          </div>
+          <span
+            class="text-fcPrimary lg:text-white font-bold pl-2 text-[20px] xl:text-[26px]"
+            >Target Africa</span
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <div
+    class="md:hidden bg-fcBlack flex items-center justify-center mx-auto text-center pt-20 font-inter text-white transform transition-transform ease-in-out duration-300"
+    [ngClass]="{ '-translate-x-full': !isOpen }"
     [class.block]="isOpen"
     [class.hidden]="!isOpen"
   >
@@ -138,7 +240,5 @@
         >
       </div>
     </div>
-
-    <!-- Add more links as needed -->
-  </div>
+  </div> -->
 </nav>

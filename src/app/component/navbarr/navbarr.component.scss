@@ -1,16 +1,10 @@
-/* CSS classes for transition */
-.transition {
-    transition-property: max-height, opacity;
-    transition-duration: 0.3s;
-    transition-timing-function: ease-in-out;
-    overflow: hidden;
-    opacity: 1;
-    max-height: 300px; /* Adjust max-height based on your menu size */
-  }
-  
-  .closed {
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
-  }
-  
+/* Transition classes */
+.translate-x-0 {
+  transform: translateX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.-translate-x-full {
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+}

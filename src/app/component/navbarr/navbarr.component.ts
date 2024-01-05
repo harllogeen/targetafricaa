@@ -14,11 +14,13 @@ export class NavbarrComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
   showDropdown = false;
+  isDropdownOpen: boolean = false;
 
-
+  toggleDropdown(): void {
+    this.isDropdownOpen = !this.isDropdownOpen;
+  }
   // isOpen = false;
 
   // toggleDropdown(): void {
