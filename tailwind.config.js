@@ -17,6 +17,7 @@ module.exports = {
         fcSecondary: "#D7AA17",
         fcBlack: "#232323",
         fcBlack2: "#1E1E1E",
+        fcBlack3: "#3E3E3E",
         fcGray: "#C4C4C4",
       },
       fontWeight: {
@@ -33,7 +34,6 @@ module.exports = {
         black: 900,
       },
       fontFamily: {
-        satoshi: ["Satoshi", "sans"],
         inter: ["Inter", "sans"],
         "cera-pro": ["Cera Pro", "sans-serif"],
       },
