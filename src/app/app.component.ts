@@ -12,18 +12,16 @@ export class AppComponent implements OnInit {
 
   title = 'targetAfricaa';
   ngOnInit() {
-    this.router.events
-      .pipe(filter((event: any) => event instanceof NavigationEnd))
-      .subscribe((event: NavigationEnd) => {
-        const fragment = event.urlAfterRedirects.split('#')[1];
-        if (fragment) {
-          const element = document.getElementById(fragment);
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        const hash = window.location.hash;
+        if (hash) {
+          const element = document.querySelector(hash);
           if (element) {
-            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            element.scrollIntoView({ behavior: 'smooth' });
           }
-        } else {
-          window.scrollTo({ top: 0, behavior: 'smooth' });
         }
-      });
+      }
+    });
   }
 }

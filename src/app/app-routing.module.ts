@@ -13,7 +13,7 @@ const routes: Routes = [
     pathMatch: 'full',
   },
   { path: 'home', component: HomeComponent },
-  { path: 'services', component: OurServicesComponent },
+  { path: 'service', component: OurServicesComponent },
   { path: 'about', component: AboutUsComponent },
   { path: 'mission', component: OurMissionComponent },
 

@@ -2,7 +2,7 @@
   <div
     class="flex bg-white md:bg-transparent py-4 sm:py-0 px-4 md:px-16 top-0 items-center justify-between"
   >
-    <div class="flex items-center" routerLink="/">
+    <div class="flex cursor-pointer items-center" href="#home">
       <div>
         <img src="../../../assets/images/logo.png" class="w-[45px] sm:w-full" />
       </div>
@@ -12,7 +12,7 @@
       >
     </div>
     <div class="hidden sm:flex items-center space-x-6 font-semibold font-inter">
-      <a routerLink="/home">
+      <div>
         <div
           class="relative inline-block"
           (mouseenter)="showDropdown = true"
@@ -51,42 +51,47 @@
           <!-- Dropdown Content -->
           <div
             *ngIf="showDropdown"
-            class="absolute !z-50 bg-white py-2 cursor-pointer w-60 rounded-md shadow-lg"
+            class="absolute !z-50 bg-white py-8 w-64 cursor-pointer rounded-md shadow-lg"
           >
             <!-- Dropdown Items -->
-            <div class="px-6 py-2">test 1</div>
-            <div class="px-6 py-2">test 2</div>
-            <div class="px-6 py-2">test 3</div>
-
-            <div class="px-6 py-2">test 4</div>
-
-            <div class="px-6 py-2">test 5</div>
-
-            <div class="px-6 py-2">test 6</div>
+            <ul class="space-y-4 pl-4 font-inter">
+              <li>
+                <a href="#about" class="text-[13px] xl:text-[14px]">About Us</a>
+              </li>
+              <li>
+                <a href="#company" class="text-[13px] xl:text-[14px]"
+                  >Our Company</a
+                >
+              </li>
+              <li>
+                <a href="#mission" class="text-[13px] !xl:text-[14px]"
+                  >Our Mission</a
+                >
+              </li>
+            </ul>
 
             <!-- Add more dropdown items as needed -->
           </div>
         </div>
-      </a>
+      </div>
       <a
-        routerLink="/services"
-        fragment="servicesSection"
+        href="#service"
         class="text-white text-[13px] xl:text-[14px] font-inter font-semibold hover:text-white"
         >OUR SERVICES</a
       >
       <a
-        routerLink="/about"
+        href="#about"
         fragment="aboutSection"
         class="text-white text-[13px] xl:text-[14px] font-inter font-semibold hover:text-white"
         >CLIENTS</a
       >
       <a
-        routerLink="/mission"
+        href="#mission"
         fragment="missionSection"
         class="text-white text-[13px] xl:text-[14px] font-inter font-semibold hover:text-white"
         >PARTNERS</a
       >
-      <a routerLink="/contact" fragment="contactSection">
+      <a href="#contact" fragment="contactSection">
         <button
           class="text-white text-[13px] xl:text-[14px] font-inter font-semibold bg-fcPrimary px-6 py-4 rounded-full hover:text-white"
         >
@@ -186,20 +191,32 @@
             <!-- Dropdown Content -->
             <div *ngIf="isDropdownOpen" class="py-2 cursor-pointer">
               <!-- Dropdown Items -->
-              <div class="px-6 py-2">test 1</div>
-              <div class="px-6 py-2">test 2</div>
-              <div class="px-6 py-2">test 3</div>
+              <div
+                class="px-6 py-2 hover:underline hover:underline-offset-[10px]"
+              >
+                <a href="#about"> About Us </a>
+              </div>
+              <div
+                class="px-6 py-2 hover:underline hover:underline-offset-[10px]"
+              >
+                <a href="#company">Our Company</a>
+              </div>
+              <div
+                class="px-6 py-2 hover:underline hover:underline-offset-[10px]"
+              >
+                <a href="#mission">Our Mission</a>
+              </div>
 
               <!-- Add more dropdown items as needed -->
             </div>
           </div>
         </div>
-        <a href="#" class="block py-2 px-4">OUR SERVICES</a>
-        <a href="#" class="block py-2 px-4">CLIENTS</a>
-        <a href="#" class="block py-2 px-4">PARTNERS</a>
-        <a href="#" class="block py-2 px-4">CONTACT US</a>
+        <a href="#service" class="block py-2 px-4">OUR SERVICES</a>
+        <a href="#about" class="block py-2 px-4">CLIENTS</a>
+        <a href="#mission" class="block py-2 px-4">PARTNERS</a>
+        <a href="#contact" class="block py-2 px-4">CONTACT US</a>
 
-        <div class="flex items-center justify-center py-20" routerLink="/">
+        <div class="flex items-center justify-center py-20" href="/">
           <div>
             <img
               src="../../../assets/images/logo.png"
@@ -227,7 +244,7 @@
       <a href="#" class="block py-2 px-4">PARTNERS</a>
       <a href="#" class="block py-2 px-4">CONTACT US</a>
 
-      <div class="flex items-center justify-center py-20" routerLink="/">
+      <div class="flex items-center justify-center py-20" href="/">
         <div>
           <img
             src="../../../assets/images/logo.png"
