@@ -4,6 +4,7 @@ import {
   Component,
   OnInit,
 } from '@angular/core';
+import * as AOS from 'aos';
 
 interface ToolbarItem {
   title: string;
@@ -19,6 +20,13 @@ interface ToolbarItem {
 export class OurMissionComponent implements OnInit {
   constructor(private cd: ChangeDetectorRef) {}
 
+  ngOnInit() {
+    // Initialize AOS inside the component
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out',
+    });
+  }
   missions = [
     {
       title: 'Our Mission',
@@ -59,6 +67,4 @@ export class OurMissionComponent implements OnInit {
   showContent(item: ToolbarItem) {
     this.activeItem = item;
   }
-
-  ngOnInit() {}
 }
