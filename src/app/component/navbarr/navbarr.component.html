@@ -25,7 +25,7 @@
           (mouseleave)="showDropdown = false"
         >
           <button
-            class="flex items-center text-[13px] xl:text-[14px] text-white py-2 rounded-md"
+            class="flex items-center text-[13px] xl:text-[14px] text-white py-2 rounded-md hover:-translate-y-2 duration-500 transition-all"
           >
             WHO ARE WE
             <svg
@@ -62,15 +62,23 @@
             <!-- Dropdown Items -->
             <ul class="space-y-4 pl-4 font-inter">
               <li>
-                <a href="#about" class="text-[13px] xl:text-[14px]">About Us</a>
+                <a
+                  href="#about"
+                  class="text-[13px] xl:text-[14px] hover:-translate-y-2 duration-500 transition-all"
+                  >About Us</a
+                >
               </li>
               <li>
-                <a href="#company" class="text-[13px] xl:text-[14px]"
+                <a
+                  href="#company"
+                  class="text-[13px] xl:text-[14px] hover:-translate-y-2 duration-500 transition-all"
                   >Our Company</a
                 >
               </li>
               <li>
-                <a href="#mission" class="text-[13px] !xl:text-[14px]"
+                <a
+                  href="#mission"
+                  class="text-[13px] !xl:text-[14px] hover:-translate-y-2 duration-500 transition-all"
                   >Our Mission</a
                 >
               </li>
@@ -82,24 +90,24 @@
       </div>
       <a
         href="#service"
-        class="text-white text-[13px] xl:text-[14px] font-inter font-semibold hover:text-white"
+        class="text-white text-[13px] xl:text-[14px] font-inter font-semibold hover:text-white hover:-translate-y-2 duration-500 transition-all"
         >OUR SERVICES</a
       >
       <a
         href="#about"
         fragment="aboutSection"
-        class="text-white text-[13px] xl:text-[14px] font-inter font-semibold hover:text-white"
+        class="text-white text-[13px] xl:text-[14px] font-inter font-semibold hover:text-white hover:-translate-y-2 duration-500 transition-all"
         >CLIENTS</a
       >
       <a
         href="#mission"
         fragment="missionSection"
-        class="text-white text-[13px] xl:text-[14px] font-inter font-semibold hover:text-white"
+        class="text-white text-[13px] xl:text-[14px] font-inter font-semibold hover:text-white hover:-translate-y-2 duration-500 transition-all"
         >PARTNERS</a
       >
       <a href="#contact" fragment="contactSection">
         <button
-          class="text-white text-[13px] xl:text-[14px] font-inter font-semibold bg-fcPrimary px-6 py-4 rounded-full hover:text-white"
+          class="text-white text-[13px] xl:text-[14px] font-inter font-semibold bg-fcPrimary px-6 py-4 rounded-full hover:text-white hover:-translate-y-2 duration-500 transition-all"
         >
           CONTACT US
         </button>
@@ -165,7 +173,7 @@
         <div href="#" class="block py-2 px-4">
           <div class="relative inline-block" (click)="toggleDropdown()">
             <button
-              class="flex items-center justify-center place-items-center text-center text-white py-2 rounded-md"
+              class="flex items-center justify-center place-items-center text-center text-white py-2 rounded-md hover:-translate-y-2 duration-500 transition-all"
             >
               WHO ARE WE
               <svg
@@ -198,17 +206,17 @@
             <div *ngIf="isDropdownOpen" class="py-2 cursor-pointer">
               <!-- Dropdown Items -->
               <div
-                class="px-6 py-2 hover:underline hover:underline-offset-[10px]"
+                class="px-6 py-2 hover:underline hover:underline-offset-[10px] hover:-translate-y-2 duration-500 transition-all"
               >
                 <a href="#about"> About Us </a>
               </div>
               <div
-                class="px-6 py-2 hover:underline hover:underline-offset-[10px]"
+                class="px-6 py-2 hover:underline hover:underline-offset-[10px] hover:-translate-y-2 duration-500 transition-all"
               >
                 <a href="#company">Our Company</a>
               </div>
               <div
-                class="px-6 py-2 hover:underline hover:underline-offset-[10px]"
+                class="px-6 py-2 hover:underline hover:underline-offset-[10px] hover:-translate-y-2 duration-500 transition-all"
               >
                 <a href="#mission">Our Mission</a>
               </div>
@@ -217,10 +225,26 @@
             </div>
           </div>
         </div>
-        <a href="#service" class="block py-2 px-4">OUR SERVICES</a>
-        <a href="#about" class="block py-2 px-4">CLIENTS</a>
-        <a href="#mission" class="block py-2 px-4">PARTNERS</a>
-        <a href="#contact" class="block py-2 px-4">CONTACT US</a>
+        <a
+          href="#service"
+          class="block py-2 px-4 hover:-translate-y-2 duration-500 transition-all"
+          >OUR SERVICES</a
+        >
+        <a
+          href="#about"
+          class="block py-2 px-4 hover:-translate-y-2 duration-500 transition-all"
+          >CLIENTS</a
+        >
+        <a
+          href="#mission"
+          class="block py-2 px-4 hover:-translate-y-2 duration-500 transition-all"
+          >PARTNERS</a
+        >
+        <a
+          href="#contact"
+          class="block py-2 px-4 hover:-translate-y-2 duration-500 transition-all"
+          >CONTACT US</a
+        >
 
         <div class="flex items-center justify-center py-20" href="/">
           <div>
